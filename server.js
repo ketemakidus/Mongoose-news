@@ -88,20 +88,20 @@ app.get("/articles", function(req, res) {
 });
 
 // // Route for grabbing a specific Article by id, populate it with it's note
-app.get("/articles/:id", function(req, res) {
-  // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
-  db.Article.findOne({ _id: req.params.id })
-    // ..and populate all of the notes associated with it
-    .populate("note")
-    .then(function(dbArticle) {
-      // If we were able to successfully find an Article with the given id, send it back to the client
-      res.json(dbArticle);
-    })
-    .catch(function(err) {
-      // If an error occurred, send it to the client
-      res.json(err);
-    });
-});
+// app.get("/articles/:id", function(req, res) {
+//   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
+//   db.Article.findOne({ _id: req.params.id })
+//     // ..and populate all of the notes associated with it
+//     .populate("note")
+//     .then(function(dbArticle) {
+//       // If we were able to successfully find an Article with the given id, send it back to the client
+//       res.json(dbArticle);
+//     })
+//     .catch(function(err) {
+//       // If an error occurred, send it to the client
+//       res.json(err);
+//     });
+// });
 
 // Route for saving/updating an Article's associated Note
 app.post("/articles/:id", function(req, res) {
@@ -122,20 +122,6 @@ app.post("/articles/:id", function(req, res) {
       res.json(err);
     });
 });
-
-app.get("/all",function(req, res){
-
-  db.notes.model.find({},function (error,found){
-    if
-      (error){
-console.log(error);
-      }
-      else {
-        res.json(found);
-      }
-  });
-});
-
 // Start the server
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
