@@ -28,6 +28,8 @@ $(document).on("click", "p", function () {
 
       $("#articles").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
+      
+
       if (data.note) {
 
         $("#titleinput").val(data.note.title);
