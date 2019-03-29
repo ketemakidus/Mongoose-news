@@ -24,3 +24,8 @@ a {
 #titleinput{
   widows:100px;
 }
+#savenote{
+  font-family: 'Permanent Marker', cursive;
+  background-color: crimson;
+
+}
