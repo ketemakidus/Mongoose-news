@@ -1,0 +1,23 @@
+body{
+  background-color: aliceblue
+}
+
+.jumbotron{
+  background: url(./001premier-league-logo-header.png);
+}
+
+p {
+  background-color: antiquewhite;
+  text-align: center;
+  font-family: 'Germania One', cursive;
+
+}
+.card-header {
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 75px;
+}
+a {
+  color: black;
+  font-family: 'Permanent Marker', cursive;
+}
