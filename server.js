@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/premireleaguedata", { useNewUrlParser: true });
 
 // Routes
 
@@ -39,17 +39,20 @@ app.get("/scrape", function(req, res) {
     var $ = cheerio.load(response.data);
 
     // Now, we grab every h2 within an article tag, and do the following:
-    $("p").each(function(i, element) {
+    $("h3").each(function(i, element) {
       // Save an empty result object
       var result = {};
 
       // Add the text and href of every link, and save them as properties of the result object
       result.title = $(this)
-        .children("a")
+        .children()
         .text();
       result.link = $(this)
         .children("a")
         .attr("href");
+        result.img = $(this)
+        .find("img")
+        .attr("src");
 
       // Create a new Article using the `result` object built from scraping
       db.Article.create(result)
