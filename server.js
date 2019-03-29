@@ -29,7 +29,6 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/premireleaguedata", { useNewUrlParser: true });
 
-mongoose.connect(MONGODB_URI);
 
 
 // Routes
@@ -88,7 +87,7 @@ app.get("/articles", function(req, res) {
     });
 });
 
-// Route for grabbing a specific Article by id, populate it with it's note
+// // Route for grabbing a specific Article by id, populate it with it's note
 app.get("/articles/:id", function(req, res) {
   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
   db.Article.findOne({ _id: req.params.id })
@@ -122,6 +121,19 @@ app.post("/articles/:id", function(req, res) {
       // If an error occurred, send it to the client
       res.json(err);
     });
+});
+
+app.get("/all",function(req, res){
+
+  db.notes.model.find({},function (error,found){
+    if
+      (error){
+console.log(error);
+      }
+      else {
+        res.json(found);
+      }
+  });
 });
 
 // Start the server
