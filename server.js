@@ -20,8 +20,9 @@ app.use(express.static("public"));
 
 // mongoose.connect("mongodb://localhost/premireleaguedata", { useNewUrlParser: true });
 
-var MONGODB_URI = process.env.MONGODB_URI;
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+// var MONGODB_URI = process.env.MONGODB_URI;
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
