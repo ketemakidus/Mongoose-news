@@ -3,6 +3,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 var PORT = process.env.PORT || 3000;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/premireleaguedata";
+mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+
 
 
 var axios = require("axios");
