@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ketemakidus/Mongoose.git"
+    "url": "git+https://github.com/ketemakidus/News-app"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ketemakidus/Mongoose/issues"
+    "url": "https://github.com/ketemakidus/News-appissues"
   },
-  "homepage": "https://github.com/ketemakidus/Mongoose#readme"
+  "homepage": "https://github.com/ketemakidus/News-app#readme"
 }
