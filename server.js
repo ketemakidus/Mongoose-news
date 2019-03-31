@@ -39,9 +39,9 @@ app.get("/scrape", function(req, res) {
       result.link = $(this)
         .children("a")
         .attr("href");
-        result.img = $(this)
-        .find("img")
-        .attr("src");
+        // result.img = $(this)
+        // .find("img")
+        // .attr("src");
 
       db.Article.create(result)
         .then(function(dbArticle) {
@@ -65,6 +65,16 @@ app.get("/articles", function(req, res) {
       res.json(err);
     });
 });
+
+app.get("/note", function(req, res){
+  db.Article.find({})
+  .then(function(dbArticle){
+    res.json(dbArticle);
+  })
+  .catch(function(err){
+    res.json(err);
+  })
+})
 
 app.get("/articles/:id", function(req, res) {
   db.Article.findOne({ _id: req.params.id })
