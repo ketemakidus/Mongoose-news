@@ -10,7 +10,7 @@ $.getJSON("/articles", function (data) {
 
 $(document).on("click", "p", function () {
 
-  $("#notes").empty();
+  $("#articles").empty();
 
   var thisId = $(this).attr("data-id");
 
