@@ -10,7 +10,7 @@ $.getJSON("/articles", function (data) {
 
 $(document).on("click", "p", function () {
 
-  $("#articles").empty();
+  $("#notes").empty();
 
   var thisId = $(this).attr("data-id");
 
@@ -22,13 +22,13 @@ $(document).on("click", "p", function () {
 
       console.log(data);
 
-      $("#articles").append("<h2>" + data.title + "</h2>");
+      $("#notes").append("<h2>" + data.title + "</h2>");
 
-      $("#articles").append("<input id='titleinput' name='title' >");
+      $("#notes").append("<input id='titleinput' name='title' >");
 
-      $("#articles").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
 
-      $("#articles").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+      $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
       
 
@@ -56,7 +56,7 @@ $(document).on("click", "#savenote", function () {
   })
     .then(function (data) {
       console.log(data);
-      $("#articles").empty();
+      $("#notes").empty();
     });
 
   $("#titleinput").val("");
